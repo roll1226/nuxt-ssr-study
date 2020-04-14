@@ -1,0 +1,28 @@
+{
+  "name": "nuxt-ssr",
+  "version": "1.0.0",
+  "description": "My first-class Nuxt.js project",
+  "author": "roll1226",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "make:dist": "rm -rf dist && mkdir -p dist && cp -R functions dist/server && cp -R .nuxt dist/server/ && cp -R static dist/client && cp -R .nuxt/dist/client/* dist/client/"
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^1.0.1",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.1.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.16.4"
+  }
+}
