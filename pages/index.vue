@@ -3,6 +3,12 @@
     <nuxt-link to="/about">
       あばうと
     </nuxt-link>
+    <p>
+      --------------------
+    </p>
+    <nuxt-link to="/meta">
+      めた
+    </nuxt-link>
     <div>
       <logo />
       <h1 class="title">
