@@ -10,7 +10,11 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "make:dist": "rm -rf dist && mkdir -p dist && cp -R functions dist/server && cp -R .nuxt dist/server/ && cp -R static dist/client && cp -R .nuxt/dist/client/* dist/client/"
+    "make:dist": "rm -rf dist && mkdir -p dist && cp -R functions dist/server && cp -R .nuxt dist/server/ && cp -R static dist/client && cp -R .nuxt/dist/client/* dist/client/",
+    "deploy;all": "firebase deploy",
+    "deploy:hosting": "firebase deploy --only hosting",
+    "deploy:functions": "firebase deploy --only functions",
+    "git:push": "github.command"
   },
   "dependencies": {
     "nuxt": "^2.0.0"

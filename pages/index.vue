@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+    <nuxt-link to="/about">
+      あばうと
+    </nuxt-link>
     <div>
       <logo />
       <h1 class="title">
