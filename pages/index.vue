@@ -1,14 +1,22 @@
 <template>
   <div class="container">
-    <nuxt-link to="/about">
-      あばうと
-    </nuxt-link>
-    <p>
-      --------------------
-    </p>
-    <nuxt-link to="/meta">
-      めた
-    </nuxt-link>
+    <div>
+      <nuxt-link to="/about">
+        あばうと
+      </nuxt-link>
+      <p>
+        --------------------
+      </p>
+      <nuxt-link to="/meta">
+        めた
+      </nuxt-link>
+      <p>
+        --------------------
+      </p>
+      <nuxt-link to="/post">
+        ぽすと
+      </nuxt-link>
+    </div>
     <div>
       <logo />
       <h1 class="title">

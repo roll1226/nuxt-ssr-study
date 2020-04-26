@@ -11,12 +11,15 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "make": "rm -rf dist && mkdir -p dist && cp -R functions dist/server && cp -R .nuxt dist/server/ && cp -R static dist/client && cp -R .nuxt/dist/client/* dist/client/",
-    "deploy:all": "firebase deploy",
+    "deploy:all": "yarn build && yarn make && firebase deploy",
     "deploy:hosting": "firebase deploy --only hosting",
     "deploy:functions": "firebase deploy --only functions",
     "git:push": "github.command"
   },
   "dependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
+    "core-js": "^2.6.11",
+    "firebase": "^7.14.2",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
@@ -24,8 +27,8 @@
     "@nuxtjs/eslint-module": "^1.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
-    "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-plugin-prettier": "^3.0.1",
     "prettier": "^1.16.4"
   }
