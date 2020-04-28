@@ -11,17 +11,21 @@
 <script>
 import { firestore } from '../plugins/firebase'
 export default {
-  data() {
-    return {
-      posts: []
-    }
-  },
-  mounted() {
-    this.$nextTick(async () => {
-      const post = await firestore.collection('posts').get()
+  // data() {
+  //   return {
+  //     posts: []
+  //   }
+  // },
 
-      this.posts.push(post.docs[0].data())
-    })
+  // async created() {
+  //   const post = await firestore.collection('posts').get()
+
+  //   this.posts.push(post.docs[0].data())
+  // }
+  async asyncData() {
+    const postData = await firestore.collection('posts').get()
+    const posts = postData.docs[0].data()
+    return { posts }
   }
 }
 </script>
