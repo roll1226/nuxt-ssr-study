@@ -5,12 +5,19 @@
     </h1>
 
     {{ posts }}
+
+    <SendPost />
   </div>
 </template>
 
 <script>
+import SendPost from '@/components/SendPost'
 import { firestore } from '../plugins/firebase'
+
 export default {
+  components: {
+    SendPost
+  },
   // data() {
   //   return {
   //     posts: []
@@ -24,7 +31,10 @@ export default {
   // }
   async asyncData() {
     const postData = await firestore.collection('posts').get()
-    const posts = postData.docs[0].data()
+    const posts = []
+    for (let index = 0; index < postData.size; index++) {
+      posts.push(postData.docs[index].data())
+    }
     return { posts }
   }
 }
